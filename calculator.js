@@ -3,8 +3,14 @@
 ///////////////////////////////
 
 // button variables (X, /, +, -, =)
+let num1 = document.querySelector('#num1');
+let num2 = document.querySelector('#num2');
+let multiply = document.querySelector('#multiply');
+let divide = document.querySelector('#divide');
+let add = document.querySelector('#add');
+let subtract = document.querySelector('#subtract');
 let equals = document.querySelector('#equals');
-let multiplication = document.querySelector('#')
+let result = document.querySelector('#result');
 
 ///////////////////////////
 ///   Event listeners   ///
@@ -12,15 +18,18 @@ let multiplication = document.querySelector('#')
 
 
 // event listener to get the numbers when the equal button is pressed
-
-equals.addEventListener('click', )
-let num1 = document.querySelector('#')
+equals.addEventListener("click", function() {
+    console.log('you clicked the = button');
+    if (num1.value === "" || num2.value === "") {
+        alert('You are missing a number');
+    }
+});
 /*
     Create a function that multiplies two numbers
     passed in as arguments. Return the product.
  */
-function multiplication {
-
+function multiplication() {
+    console.log('Your gonna multiply!!')
 }
 
 /*
