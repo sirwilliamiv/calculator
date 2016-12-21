@@ -2,53 +2,63 @@
 ///    global variables     ///
 ///////////////////////////////
 
-// button variables (X, /, +, -, =)
+// number variables
 let num1 = document.querySelector('#num1');
 let num2 = document.querySelector('#num2');
+
+// button variables (X, /, +, -, =)
 let multiply = document.querySelector('#multiply');
 let divide = document.querySelector('#divide');
 let add = document.querySelector('#add');
 let subtract = document.querySelector('#subtract');
 let equals = document.querySelector('#equals');
-let result = document.querySelector('#result');
+
+// results section HTML
+let resultsHTML = document.querySelector('#result');
+
 
 ///////////////////////////
 ///   Event listeners   ///
 ///////////////////////////
 
-
 // event listener to get the numbers when the equal button is pressed
 equals.addEventListener("click", function() {
-    console.log('you clicked the = button');
     if (num1.value === "" || num2.value === "") {
         alert('You are missing a number');
     }
 });
-/*
-    Create a function that multiplies two numbers
-    passed in as arguments. Return the product.
- */
-function multiplication() {
-    console.log('Your gonna multiply!!')
+
+//////////////////////////
+///   math functions   ///
+//////////////////////////
+
+// Create a function that multiplies two numbers passed in as arguments. Return the product.
+function multiplication(x, y) {
+    console.log('Your gonna multiply!!');
+    var result = x * y;
+    return result;
 }
 
-/*
-    Create a function that adds two numbers
-    passed in as arguments. Return the sum.
- */
+// Create a function that adds two numbers passed in as arguments. Return the sum.
+function addition(x, y) {
+    console.log("your gonna add");
+    var result = x + y;
+    return result;
+}
 
+// Create a function that subtracts two numbers passed in as arguments. Return the difference.
+function subtraction(x, y) {
+    console.log('Your gonna subtract');
+    var result = x - y;
+    return result;
+}
 
-/*
-    Create a function that subtracts two numbers
-    passed in as arguments. Return the difference.
- */
-
-
-/*
-    Create a function that divides two numbers
-    passed in as arguments. Return the quotient.
- */
-
+//  Create a function that divides two numbers passed in as arguments. Return the quotient.
+function division(x, y) {
+    console.log('Your gonna divide');
+    var result = x / y;
+    return result;
+}
 
 
 /*
@@ -59,3 +69,7 @@ function multiplication() {
 
     Return the value of the operation.
  */
+function doMath(x, y, math) {
+    var result = math(x, y);
+    return result;
+}
