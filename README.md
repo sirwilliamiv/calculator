@@ -6,6 +6,4 @@
 
 3. In your JavaScript, put an event listener on each of the buttons.
 
-4. Copy the code below an implement a basic calculator.
-
-5. When the user performs one of the operations, output the result to another DOM element of your choice.
+4. When the user performs one of the operations, output the result to another DOM element of your choice.
