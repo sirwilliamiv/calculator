@@ -13,6 +13,9 @@ let addButton = document.querySelector('#add');
 let subtractButton = document.querySelector('#subtract');
 let equalsButton = document.querySelector('#equals');
 
+// mathFunction is the function to run
+let mathFunction;
+
 // results section HTML
 let resultsHTML = document.querySelector('#result');
 
@@ -23,31 +26,34 @@ let resultsHTML = document.querySelector('#result');
 
 // event listener on multiplication button
 multiplyButton.addEventListener("click", function() {
+    removeClass();
     multiplyButton.className += "blueBorder";
-    console.log('multiply button clicked')
+    mathFunction = multiplication;
 });
 
 // event listener on multiplication button
 divideButton.addEventListener("click", function() {
+    removeClass();
     divideButton.className += "blueBorder";
-    console.log('divide button clicked')
+    mathFunction = division;
 });
 
 // event listener on multiplication button
 addButton.addEventListener("click", function() {
+    removeClass();
     addButton.className += "blueBorder";
-    console.log('add button clicked')
+    mathFunction = addition;
 });
 
 // event listener on multiplication button
 subtractButton.addEventListener("click", function() {
+    removeClass();
     subtractButton.className += "blueBorder";
-    console.log('subtract button clicked')
+    mathFunction = subtraction;
 });
 
 // event listener to get the numbers when the equal button is pressed
 equalsButton.addEventListener("click", function() {
-    let mathFunction = subtraction;
     num1 = parseInt(num1.value);
     num2 = parseInt(num2.value);
     if (num1.value === "" || num2.value === "") {
@@ -101,4 +107,15 @@ function doMath(x, y, math) {
     var result = math(x, y);
     console.log('doMath', result)
     return result;
+}
+
+//////////////////////////
+///   functions misc   ///
+//////////////////////////
+
+// remove class blueBorder from anywhere it exists
+function removeClass() {
+    if (document.querySelector('.blueBorder')) {
+        document.querySelector('.blueBorder').className = "";
+    }
 }
