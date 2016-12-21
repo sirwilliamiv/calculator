@@ -23,28 +23,37 @@ let resultsHTML = document.querySelector('#result');
 
 // event listener on multiplication button
 multiplyButton.addEventListener("click", function() {
+    multiplyButton.className += "blueBorder";
     console.log('multiply button clicked')
 });
 
 // event listener on multiplication button
 divideButton.addEventListener("click", function() {
+    divideButton.className += "blueBorder";
     console.log('divide button clicked')
 });
 
 // event listener on multiplication button
 addButton.addEventListener("click", function() {
+    addButton.className += "blueBorder";
     console.log('add button clicked')
 });
 
 // event listener on multiplication button
 subtractButton.addEventListener("click", function() {
+    subtractButton.className += "blueBorder";
     console.log('subtract button clicked')
 });
 
 // event listener to get the numbers when the equal button is pressed
 equalsButton.addEventListener("click", function() {
+    let mathFunction = subtraction;
+    num1 = parseInt(num1.value);
+    num2 = parseInt(num2.value);
     if (num1.value === "" || num2.value === "") {
         alert('You are missing a number');
+    } else {
+        doMath(num1, num2, mathFunction)
     }
 });
 
@@ -90,7 +99,6 @@ function division(x, y) {
  */
 function doMath(x, y, math) {
     var result = math(x, y);
+    console.log('doMath', result)
     return result;
 }
-
-doMath(10, 50, division);
