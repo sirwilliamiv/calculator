@@ -13,7 +13,7 @@ let addButton = document.querySelector('#add');
 let subtractButton = document.querySelector('#subtract');
 let equalsButton = document.querySelector('#equals');
 
-// mathFunction is the function to run
+// mathFunction is the function to run using doMath at bottom
 let mathFunction;
 
 // results section HTML
@@ -27,6 +27,7 @@ let resultsHTML = document.querySelector('#result');
 // event listener on multiplication button
 multiplyButton.addEventListener("click", function() {
     removeClass();
+    mathFunction = '';
     multiplyButton.className += "blueBorder";
     mathFunction = multiplication;
 });
@@ -34,6 +35,7 @@ multiplyButton.addEventListener("click", function() {
 // event listener on multiplication button
 divideButton.addEventListener("click", function() {
     removeClass();
+    mathFunction = '';
     divideButton.className += "blueBorder";
     mathFunction = division;
 });
@@ -41,6 +43,7 @@ divideButton.addEventListener("click", function() {
 // event listener on multiplication button
 addButton.addEventListener("click", function() {
     removeClass();
+    mathFunction = '';
     addButton.className += "blueBorder";
     mathFunction = addition;
 });
@@ -48,6 +51,7 @@ addButton.addEventListener("click", function() {
 // event listener on multiplication button
 subtractButton.addEventListener("click", function() {
     removeClass();
+    mathFunction = '';
     subtractButton.className += "blueBorder";
     mathFunction = subtraction;
 });
@@ -106,6 +110,7 @@ function division(x, y) {
 function doMath(x, y, math) {
     var result = math(x, y);
     console.log('doMath', result)
+    writeToDOM(result);
     return result;
 }
 
@@ -118,4 +123,10 @@ function removeClass() {
     if (document.querySelector('.blueBorder')) {
         document.querySelector('.blueBorder').className = "";
     }
+}
+
+// write doMath result to the DOM
+function writeToDOM(result) {
+    resultsHTML.innerHTML =
+        `<p>Result: ${result}</p>`
 }
