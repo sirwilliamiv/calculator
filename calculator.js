@@ -109,6 +109,7 @@ function division(x, y) {
  */
 function doMath(x, y, math) {
     var result = math(x, y);
+    console.log('x, y, math', x, y, math)
     console.log('doMath', result)
     writeToDOM(result);
     return result;
