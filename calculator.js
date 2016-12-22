@@ -2,8 +2,6 @@
 ///    global variables     ///
 ///////////////////////////////
 
-
-
 // button variables (X, /, +, -, =)
 let multiplyButton = document.querySelector('#multiply');
 let divideButton = document.querySelector('#divide');
@@ -70,28 +68,24 @@ equalsButton.addEventListener("click", function() {
 
 // Create a function that multiplies two numbers passed in as arguments. Return the product.
 function multiplication(x, y) {
-    console.log('Your gonna multiply!!');
     var result = x * y;
     return result;
 }
 
 // Create a function that adds two numbers passed in as arguments. Return the sum.
 function addition(x, y) {
-    console.log("your gonna add");
     var result = x + y;
     return result;
 }
 
 // Create a function that subtracts two numbers passed in as arguments. Return the difference.
 function subtraction(x, y) {
-    console.log('Your gonna subtract');
     var result = x - y;
     return result;
 }
 
 //  Create a function that divides two numbers passed in as arguments. Return the quotient.
 function division(x, y) {
-    console.log('Your gonna divide');
     var result = x / y;
     return result;
 }
@@ -106,8 +100,6 @@ function division(x, y) {
  */
 function doMath(x, y, math) {
     var result = math(x, y);
-    console.log('x, y, math', x, y, math)
-    console.log('doMath', result)
     writeToDOM(result);
     return result;
 }
