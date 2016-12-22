@@ -2,9 +2,7 @@
 ///    global variables     ///
 ///////////////////////////////
 
-// number variables
-let num1 = document.querySelector('#num1');
-let num2 = document.querySelector('#num2');
+
 
 // button variables (X, /, +, -, =)
 let multiplyButton = document.querySelector('#multiply');
@@ -27,7 +25,6 @@ let resultsHTML = document.querySelector('#result');
 // event listener on multiplication button
 multiplyButton.addEventListener("click", function() {
     removeClass();
-    mathFunction = '';
     multiplyButton.className += "blueBorder";
     mathFunction = multiplication;
 });
@@ -35,7 +32,6 @@ multiplyButton.addEventListener("click", function() {
 // event listener on multiplication button
 divideButton.addEventListener("click", function() {
     removeClass();
-    mathFunction = '';
     divideButton.className += "blueBorder";
     mathFunction = division;
 });
@@ -43,7 +39,6 @@ divideButton.addEventListener("click", function() {
 // event listener on multiplication button
 addButton.addEventListener("click", function() {
     removeClass();
-    mathFunction = '';
     addButton.className += "blueBorder";
     mathFunction = addition;
 });
@@ -51,13 +46,15 @@ addButton.addEventListener("click", function() {
 // event listener on multiplication button
 subtractButton.addEventListener("click", function() {
     removeClass();
-    mathFunction = '';
     subtractButton.className += "blueBorder";
     mathFunction = subtraction;
 });
 
 // event listener to get the numbers when the equal button is pressed
 equalsButton.addEventListener("click", function() {
+    // number variables
+    let num1 = document.querySelector('#num1');
+    let num2 = document.querySelector('#num2');
     num1 = parseInt(num1.value);
     num2 = parseInt(num2.value);
     if (num1.value === "" || num2.value === "") {
